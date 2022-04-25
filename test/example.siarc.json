@@ -1,0 +1,82 @@
+{
+    "name": "STP Server",
+    "baseUri": "https://pioneers.uniks.de",
+    "endpoints:": [
+        {
+            "method": "POST",
+            "path": "/api/v1/auth/login",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string",
+                "accessToken": "string",
+                "refreshToken": "string"
+            },
+            "request": {
+                "name": "string",
+                "password": "string"
+            }
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        },
+        {
+            "method": "",
+            "path": "",
+            "response": "",
+            "request": ""
+        }
+    ]
+}

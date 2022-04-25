@@ -2,30 +2,48 @@
   "name": "oa-parser-typescript",
   "version": "0.0.1",
   "description": "OpenAPI parser for Typescript",
-  "main": "dist/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint '{src,test}/**/*.ts' --fix",
-    "start": "ts-node-dev src/main.ts",
-    "start:prod": "node dist/main"
+    "test": "jest"
   },
   "author": "Sebastian Copei",
   "license": "MIT",
   "dependencies": {
-    "rimraf": "^3.0.2"
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "rimraf": "^3.0.2",
+    "swagger2openapi": "^7.0.8"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.5.1",
     "prettier": "^2.6.2",
-    "ts-node": "^10.7.0",
-    "ts-node-dev": "^1.1.8",
+    "ts-jest": "^27.1.4",
     "typescript": "^4.6.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "test",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
