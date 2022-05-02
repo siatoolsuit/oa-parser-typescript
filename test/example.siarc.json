@@ -1,7 +1,7 @@
 {
     "name": "STP Server",
     "baseUri": "https://pioneers.uniks.de",
-    "endpoints:": [
+    "endpoints": [
         {
             "method": "POST",
             "path": "/api/v1/auth/login",
@@ -19,64 +19,369 @@
             }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "POST",
+            "path": "/api/v1/auth/refresh",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string",
+                "accessToken": "string",
+                "refreshToken": "string"
+            },
+            "request": {
+                "refreshToken": "string"
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "POST",
+            "path": "/api/v1/auth/logout",
+            "response": "string"
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "GET",
+            "path": "/api/v1/users",
+            "response": {
+                "isArray": true,
+                "type": {
+                    "_id": "string",
+                    "name": "string",
+                    "status": "string",
+                    "avatar": "string"
+                }
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "POST",
+            "path": "/api/v1/users",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string"
+            },
+            "request": {
+                "name": "string",
+                "avatar": "string",
+                "password": "string"
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "GET",
+            "path": "/api/v1/users/{id}",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string"
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "PATCH",
+            "path": "/api/v1/users/{id}",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string"
+            },
+            "request": {
+                "name": "string",
+                "status": "string",
+                "avatar": "string",
+                "password": "string"
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "DELETE",
+            "path": "/api/v1/users/{id}",
+            "response": {
+                "_id": "string",
+                "name": "string",
+                "status": "string",
+                "avatar": "string"
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "GET",
+            "path": "/api/v1/groups",
+            "response": {
+                "isArray": true,
+                "type": {
+                    "createdAt": "string",
+                    "updatedAt": "string",
+                    "_id": "string",
+                    "members": {
+                        "isArray": true,
+                        "type": "string"
+                    }
+                }
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "POST",
+            "path": "/api/v1/groups",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            },
+            "request": {
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            }
         },
         {
-            "method": "",
-            "path": "",
-            "response": "",
-            "request": ""
+            "method": "GET",
+            "path": "/api/v1/groups/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/api/v1/groups/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            },
+            "request": {
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/api/v1/groups/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "members": {
+                    "isArray": true,
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/{namespace}/{parent}/messages",
+            "response": {
+                "isArray": true,
+                "type": {
+                    "createdAt": "string",
+                    "updatedAt": "string",
+                    "_id": "string",
+                    "sender": "string",
+                    "body": "string"
+                }
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/api/v1/{namespace}/{parent}/messages",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "sender": "string",
+                "body": "string"
+            },
+            "request": {
+                "body": "string"
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/{namespace}/{parent}/messages/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "sender": "string",
+                "body": "string"
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/api/v1/{namespace}/{parent}/messages/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "sender": "string",
+                "body": "string"
+            },
+            "request": {
+                "body": "string"
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/api/v1/{namespace}/{parent}/messages/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "sender": "string",
+                "body": "string"
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/games/{gameId}/members",
+            "response": {
+                "isArray": true,
+                "type": {
+                    "createdAt": "string",
+                    "updatedAt": "string",
+                    "gameId": "string",
+                    "userId": "string",
+                    "ready": "boolean"
+                }
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/api/v1/games/{gameId}/members",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "gameId": "string",
+                "userId": "string",
+                "ready": "boolean"
+            },
+            "request": {
+                "ready": "boolean",
+                "password": "string"
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/games/{gameId}/members/{userId}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "gameId": "string",
+                "userId": "string",
+                "ready": "boolean"
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/api/v1/games/{gameId}/members/{userId}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "gameId": "string",
+                "userId": "string",
+                "ready": "boolean"
+            },
+            "request": {
+                "ready": "boolean"
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/api/v1/games/{gameId}/members/{userId}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "gameId": "string",
+                "userId": "string",
+                "ready": "boolean"
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/games",
+            "response": {
+                "isArray": true,
+                "type": {
+                    "createdAt": "string",
+                    "updatedAt": "string",
+                    "_id": "string",
+                    "name": "string",
+                    "owner": "string",
+                    "members": "number"
+                }
+            }
+        },
+        {
+            "method": "POST",
+            "path": "/api/v1/games",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "name": "string",
+                "owner": "string",
+                "members": "number"
+            },
+            "request": {
+                "name": "string",
+                "password": "string"
+            }
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/games/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "name": "string",
+                "owner": "string",
+                "members": "number"
+            }
+        },
+        {
+            "method": "PATCH",
+            "path": "/api/v1/games/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "name": "string",
+                "owner": "string",
+                "members": "number"
+            },
+            "request": {
+                "name": "string",
+                "owner": "string",
+                "password": "string"
+            }
+        },
+        {
+            "method": "DELETE",
+            "path": "/api/v1/games/{id}",
+            "response": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "_id": "string",
+                "name": "string",
+                "owner": "string",
+                "members": "number"
+            }
         }
     ]
 }

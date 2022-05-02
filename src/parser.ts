@@ -25,9 +25,13 @@ export class OpenAPIParser {
   }
 
   private parseSpecification(transformedSpec: OpenAPI3, uri: string): API {
+    if ((uri.startsWith('http://') || uri.startsWith('https://')) && transformedSpec.servers.length === 0) {
+      uri = new URL(uri).origin;
+    }
+
     const api = {
       name: transformedSpec.info.title,
-      baseURI: uri,
+      baseUri: transformedSpec.servers[0].url || uri,
       endpoints: [],
     };
     for (const pathKey in transformedSpec.paths) {

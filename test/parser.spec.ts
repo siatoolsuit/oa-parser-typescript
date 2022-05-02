@@ -14,11 +14,11 @@ describe('OpenAPIParser', () => {
       const api: API[] = await parser.fromURL(['./test/example.json']);
       const pioneers = api[0];
 
-      // Load simplified api specification TODO: Das example händisch fertig schreiben und dann die arrays bauen
+      // Load simplified api specification
       const example = JSON.parse(readFileSync('./test/example.siarc.json').toString());
 
       // Compare generated and defined simplified api specification
-      expect(pioneers).toBe(example);
+      expect(pioneers).toStrictEqual(example);
     }); 
   });
 });

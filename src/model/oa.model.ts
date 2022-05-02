@@ -12,6 +12,7 @@ export interface OpenAPI2 {
 export interface OpenAPI3 {
   openapi: string;
   info?: Info;
+  servers?: Server[],
   paths?: Record<string, PathItem>;
   components?: {
     schemas?: Record<string, Schema>;
@@ -27,6 +28,11 @@ export interface Info {
   description?: string;
   title?: string;
   version?: string;
+}
+
+export interface Server {
+  url?: string;
+  description?: string;
 }
 
 export interface PathItem {

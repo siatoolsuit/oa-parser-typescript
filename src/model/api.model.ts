@@ -2,13 +2,13 @@
 
 export interface API {
   name: string;
-  baseURI: string;
+  baseUri: string;
   endpoints: Endpoint[];
 }
 
 export interface Endpoint {
   path: string;
   method: string;
-  response: Record<string, string> | string;
-  request?: Record<string, string>;
+  response: Record<string, any> | string;
+  request?: Record<string, any>;
 }

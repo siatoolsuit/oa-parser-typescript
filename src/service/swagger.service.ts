@@ -42,9 +42,9 @@ export class SwaggerService {
     return (await converter.convertObj(spec, {})).openapi;
   }
 
-  public simplifySchema(schema: Schema): Record<string, string> | string {
+  public simplifySchema(schema: Schema): Record<string, any> | string {
     if (schema.type === 'array') {
-
+      return { isArray: true, type: this.simplifySchema(schema.items)};
     } else if(schema.type === 'object') {
       const typeRecord: Record<string, string> = {};
       for (const prop in schema.properties) {
