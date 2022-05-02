@@ -1,6 +1,6 @@
 {
-  "name": "oa-parser-typescript",
-  "version": "0.0.1",
+  "name": "@siatools/oa-parser-typescript",
+  "version": "0.1.0",
   "description": "OpenAPI parser for Typescript",
   "scripts": {
     "prebuild": "rimraf dist",
